@@ -6,6 +6,7 @@ public class Blackjack{
 	private Player player;
 	private Player dealer;
 	private Deck deck;
+	private boolean started = false;
 
 	public Blackjack(){
 
@@ -116,6 +117,8 @@ public class Blackjack{
 	}
 
 	public void startGame(){
+		this.started = true;
+
 		//bet
 		player.bet();
 		//first card
