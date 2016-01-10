@@ -1,0 +1,42 @@
+
+shell　ーーーーーーーーーーーーーーーーーーーーーーーーー
+sh -x bin/build.sh   実行内容を表示
+
+java -d コンパイルされた.classファイルをどこに置くか決めれる
+　　-classpath コンパイルするクラスが参照(import)してるクラスの場所
+複数のパッケージを見るとき　:    (A:B:C:D)
+
+mkdir -p　folder/folder  途中のフォルダーが存在しなくても作ってくる
+
+ps   (process status,  自分で動かしてるプロセス一覧表示）
+ps ax (バックグラウンドで走ってるのも含めて全て表示）
+ps ax | grep java  (javaの物だけ表示）
+kill -9 <プロセス番号>  (kill -9 685など）　そのプロセス番号のプロセスを殺す
+
+一個下のフォルダーの中身を見る　ls <フォルダー名>
+pwd (print working directory) 今いるpathを表示
+
+$HOME  = ~
+
+
+jetty ーーーーーーーーーーーーーーーーーーーーーーーー〜〜
+jettyのstart.jarの起動コマンド　README.TXTに書いてある
+
+webapp/WEB-INF/web.xml
+webapp/WEB-INF/lib/にjarファイルを置かないとservletで使えない
+
+archiveーーーーーーーーーーーーーーーーーーーーーーーー
+war web archive 
+jar java archive
+tar tape archive 
+
+x バラす
+c　作る
+t　中身みる　v　情報　f　fの後のファイルに対して実行する
+
+jar cvf <作りたいwarファイルの名前> WEB-INF
+
+localhost:8080/warファイル名/web.xml内で定義したpath名
+でブラウザーからアクセスできる
+
+———
