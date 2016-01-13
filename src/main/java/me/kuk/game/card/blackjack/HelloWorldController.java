@@ -11,7 +11,15 @@ public class HelloWorldController extends HttpServlet{
 
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		model = new HelloWorldModel();
-		view = new HelloWorldView(model,res);
+		String action = req.getParameter("a");
+		String name = req.getParameter("name");
+	//	if(action.equals("Enter your name here!")){
+			model.setName(name);
+	//		view = new HelloWorldView(model, true, res);
+	//	}
+	//	else{
+			view = new HelloWorldView(model, res);
+	//	}
 	}	
 
 }
