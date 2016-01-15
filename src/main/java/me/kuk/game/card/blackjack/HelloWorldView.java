@@ -18,7 +18,6 @@ public class HelloWorldView{
 		OutputStream outByte = res.getOutputStream();
 		OutputStreamWriter outChar = new OutputStreamWriter(outByte, UTF_8);
 		PrintWriter outPrint = new PrintWriter(outChar);
-		outPrint.println(model.getMessage());
 		outPrint.println("<html>");
 		outPrint.println("<body>");
 	//	if(this.typedName = false){
@@ -30,6 +29,7 @@ public class HelloWorldView{
 	//	}
 	//	else{
 			outPrint.println("<p>Hello, " + model.getName() + " san!</p>");
+			outPrint.println(model.getMessage());
 	//	}
 		outPrint.println("</body>");
 		outPrint.println("</html>");
