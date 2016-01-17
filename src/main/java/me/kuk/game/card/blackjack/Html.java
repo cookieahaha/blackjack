@@ -1,73 +1,76 @@
+import java.io.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import javax.servlet.http.HttpServletResponse;
+
 public class Html{
 
-	private Game game;
+	private boolean gameStarted = false;
 
-	public htmlGame game(){
-		this.game = game;
-	}
+	public Html(Game game, HttpServletResponse res) throws IOException{
+		OutputStream outByte = res.getOutputStream();
+		OutputStreamWriter outChar = new OutputStreamWriter(outByte, utF_8);
+		PrintWriter p = new PrintWriter(outChar);
 
-	public String generate(){
-		StringBuilder sb = new StringBuilder();
-
-		sb.append("<html>");
+		p.println("<html>");
 
 		//head
-		sb.append("<head>");
-		sb.append("<title>");
-		sb.append("Blackjack");
-		sb.append("</title>");
-		sb.append("</head>");
+		p.println("<head>");
+		p.println("<title>");
+		p.println("Blackjack");
+		p.println("</title>");
+		p.println("</head>");
 
 		//body
-		sb.append("<body>");
+		p.println("<body>");
 		
 		//new game
-		sb.append("<form action=\"blackjack\">");
-		sb.append("<input type = \"hidden\" name = \"a\" value = \"start the game\">");
-		sb.append("input type=\"submit\" value=\"Start the game"\">");
-		sb.append("</form>");
-		
-		//bet
-		sb.append("<form action=\"blackjack\">");
-		sb.append("<input type = \"hidden\" name = \"a\" value = \"start the game\">");
-		sb.append("input type=\"submit\" value=\"Start the game"\">");
-		sb.append("</form>");
+		if(this.gameStarted == false){
+			p.println("<form action=\"blackjack\">");
+			p.println("<input type=\"hidden\" name=\"a\" value=\"start the game\">");
+			p.println("input type=\"submit\" value=\"Start the game\">");
+			p.println("</form>");
+		}
+		else{
+			//bet
+			p.println("<form action=\"blackjack\">");
+			p.println("<input type=\"hidden\" name=\"a\" value=\"bet\">");
+			p.println("input type=\"submit\" value=\"bet\">");
+			p.println("</form>");
 
-		if(game.started()){
-		sb.append("wins"); //win
-		sb.append("losses"); //loss
+		if(this.gameStarted){
+		p.println("wins"); //win
+		p.println("losses"); //loss
 
-		sb.append("You");   //player name
-		sb.append("");   //player cards
-		sb.append("");  //player score
-		sb.append("vs");  //vs
-		sb.append("Dealer");   //dealer name
-		sb.append("");   //dealer cards
-		sb.append("");  //dealer score
+		p.println("You");   //player name
+		p.println("");   //player cards
+		p.println("");  //player score
+		p.println("vs");  //vs
+		p.println("Dealer");   //dealer name
+		p.println("");   //dealer cards
+		p.println("");  //dealer score
 
 		//hit
-		sb.append("<form action=\"blackjack\">");
-		sb.append("<input type = \"hidden\" name = \"a\" value = \"hit\">");
-		sb.append("input type=\"submit\" value=\"hit"\">");
-		sb.append("</form>");
+		p.println("<form action=\"blackjack\">");
+		p.println("<input type =\"hidden\" name=\"a\" value=\"hit\">");
+		p.println("input type=\"submit\" value=\"hit\">");
+		p.println("</form>");
 		
 		//stand
-		sb.append("<form action=\"blackjack\">");
-		sb.append("<input type = \"hidden\" name = \"a\" value = \"stand\">");
-		sb.append("input type=\"submit\" value=\"stand"\">");
-		sb.append("</form>");
+		p.println("<form action=\"blackjack\">");
+		p.println("<input type = \"hidden\" name =\"a\" value =\"stand\">");
+		p.println("input type=\"submit\" value=\"stand\">");
+		p.println("</form>");
 
 		//double
-		sb.append("<form action=\"blackjack\">");
-		sb.append("<input type = \"hidden\" name = \"a\" value = \"double\">");
-		sb.append("input type=\"submit\" value=\"double"\">");
-		sb.append("</form>");
+		p.println("<form action=\"blackjack\">");
+		p.println("<input type =\"hidden\" name =\"a\" value=\"double\">");
+		p.println("input type=\"submit\" value=\"double\">");
+		p.println("</form>");
+		}
+		}
 
-
-
-		sb.append("</body>");
-		sb.append("</html>");
+		p.println("</body>");
+		p.println("</html>");
 		
-		return sb.toString();
 	}
 }
