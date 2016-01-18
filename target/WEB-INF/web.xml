@@ -9,10 +9,18 @@
     <servlet-class>HelloWorldController</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>blackjack</servlet-name>
+    <servlet-class>Controller</servlet-class>
 
   <servlet-mapping>
     <servlet-name>helloworld</servlet-name>
     <url-pattern>/hello/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>blackjack</servlet-name>
+    <url-pattern>/bj/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

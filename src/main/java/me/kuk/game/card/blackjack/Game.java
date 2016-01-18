@@ -8,7 +8,7 @@ public class Game{
 	}
 
 	public void startGame(){
-		this.blackjack.start();
+		this.blackjack.startGame();
 		this.isStarted = true;
 	}
 

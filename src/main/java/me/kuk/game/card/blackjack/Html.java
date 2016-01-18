@@ -8,7 +8,7 @@ public class Html{
 
 	public Html(Game game, HttpServletResponse res) throws IOException{
 		OutputStream outByte = res.getOutputStream();
-		OutputStreamWriter outChar = new OutputStreamWriter(outByte, utF_8);
+		OutputStreamWriter outChar = new OutputStreamWriter(outByte, UTF_8);
 		PrintWriter p = new PrintWriter(outChar);
 
 		p.println("<html>");
