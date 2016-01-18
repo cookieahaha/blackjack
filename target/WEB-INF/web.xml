@@ -12,6 +12,7 @@
   <servlet>
     <servlet-name>blackjack</servlet-name>
     <servlet-class>Controller</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>helloworld</servlet-name>

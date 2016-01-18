@@ -71,6 +71,6 @@ public class Html{
 
 		p.println("</body>");
 		p.println("</html>");
-		
+		p.close();	
 	}
 }
