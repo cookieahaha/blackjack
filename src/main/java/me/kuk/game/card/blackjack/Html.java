@@ -22,19 +22,19 @@ public class Html{
 
 		//body
 		p.println("<body>");
-		
+		p.println("<p>test</p>");
 		//new game
 		if(this.gameStarted == false){
 			p.println("<form action=\"blackjack\">");
 			p.println("<input type=\"hidden\" name=\"a\" value=\"start the game\">");
-			p.println("input type=\"submit\" value=\"Start the game\">");
+			p.println("<input type=\"submit\" value=\"Start the game\">");
 			p.println("</form>");
 		}
 		else{
 			//bet
 			p.println("<form action=\"blackjack\">");
 			p.println("<input type=\"hidden\" name=\"a\" value=\"bet\">");
-			p.println("input type=\"submit\" value=\"bet\">");
+			p.println("<input type=\"submit\" value=\"bet\">");
 			p.println("</form>");
 
 		if(this.gameStarted){
@@ -52,19 +52,19 @@ public class Html{
 		//hit
 		p.println("<form action=\"blackjack\">");
 		p.println("<input type =\"hidden\" name=\"a\" value=\"hit\">");
-		p.println("input type=\"submit\" value=\"hit\">");
+		p.println("<input type=\"submit\" value=\"hit\">");
 		p.println("</form>");
 		
 		//stand
 		p.println("<form action=\"blackjack\">");
 		p.println("<input type = \"hidden\" name =\"a\" value =\"stand\">");
-		p.println("input type=\"submit\" value=\"stand\">");
+		p.println("<input type=\"submit\" value=\"stand\">");
 		p.println("</form>");
 
 		//double
 		p.println("<form action=\"blackjack\">");
 		p.println("<input type =\"hidden\" name =\"a\" value=\"double\">");
-		p.println("input type=\"submit\" value=\"double\">");
+		p.println("<input type=\"submit\" value=\"double\">");
 		p.println("</form>");
 		}
 		}
