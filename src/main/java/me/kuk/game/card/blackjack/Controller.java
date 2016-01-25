@@ -10,8 +10,18 @@ public class Controller extends HttpServlet{
 	private Html view = null;
 
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		model = new Game();
-	//	String action = req.getParameter("a");
-		view = new Html(model, res);	
+		if(model == null){
+			model = new Game();
+		}
+		else{
+			String action = req.getParameter("a");
+			if(action == "Start the game" ){
+				model.startGame();
+			}
+		//	else if(action == "hit"){
+		//		model.hit();
+		//	}
+			view = new Html(model, res);	
+		}
 	}
 }
