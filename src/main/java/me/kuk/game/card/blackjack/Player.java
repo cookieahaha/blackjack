@@ -137,4 +137,12 @@ public class Player{
 		this.blackjack = false;
 		this.action = -1;
 	}
+
+	public String getName(){
+		return this.name;
+	}
+
+	public int getScore(){
+		return 0;
+	}
 }

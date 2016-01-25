@@ -118,7 +118,10 @@ public class Blackjack{
 
 	public void startGame(){
 		this.started = true;
+		prepare();
+	}
 
+	/*
 		//bet
 		player.bet();
 		//first card
@@ -137,6 +140,8 @@ public class Blackjack{
 		//System.out.println("dealer: " + dealer.getHandCard());
 		//dealer.showHand();
 	}
+
+	*/
 
 	public void playerTurn(){		
 		//Player
@@ -299,5 +304,13 @@ public class Blackjack{
 	public void prepareNextRound(){
 		player.nextRound();
 		dealer.nextRound();
+	}
+
+	public Player getPlayer(){
+		return this.player;
+	}
+
+	public Player getJealer(){
+		return this.dealer;
 	}
 }

@@ -13,15 +13,16 @@ public class Controller extends HttpServlet{
 		if(model == null){
 			model = new Game();
 		}
-		else{
-			String action = req.getParameter("a");
-			if(action == "Start the game" ){
-				model.startGame();
-			}
-		//	else if(action == "hit"){
-		//		model.hit();
-		//	}
-			view = new Html(model, res);	
+		String action = req.getParameter("a");
+		if(action ==null){
+			view = new Html(model, res);
 		}
+		if(action.equals("start the game")){
+			model.startGame();
+		}
+	//	else if(action.equals("hit")){
+	//		model.hit();
+	//	}
+		view = new Html(model, res);	
 	}
 }

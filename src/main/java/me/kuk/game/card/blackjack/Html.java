@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Html{
 
-	private boolean gameStarted = false;
 
 	public Html(Game game, HttpServletResponse res) throws IOException{
 		OutputStream outByte = res.getOutputStream();
@@ -24,14 +23,10 @@ public class Html{
 		p.println("<body>");
 		p.println("<p>test</p>");
 		//new game
-		if(this.gameStarted == false){
 			p.println("<form action=\"bj\">");
 			p.println("<input type=\"hidden\" name=\"a\" value=\"start the game\">");
 			p.println("<input type=\"submit\" value=\"Start the game\">");
 			p.println("</form>");
-			this.gameStarted = true;
-		}
-		else{
 			p.println("<p>iojfrmcniunv</p>");			
 
 			//bet
@@ -43,13 +38,13 @@ public class Html{
 			p.println("wins"); //win
 			p.println("losses"); //loss
 
-			p.println("You");   //player name
-			p.println("");   //player cards
-			p.println("");  //player score
+			p.println(model.getBlackjack().getPlayer().getName());   //player name
+			p.println(mode.getBlackjack().getPlayer().getScore());   //player score
+			p.println("");  //player card
 			p.println("vs");  //vs
-			p.println("Dealer");   //dealer name
-			p.println("");   //dealer cards
-			p.println("");  //dealer score
+			p.println(mode.getBlackjack().getDealer().getName());   //dealer name
+			p.printnl(mode.getBlackjack().getPlayer().getScore());   //dealer score
+			p.println("");  //dealer card
 
 			//hit
 			p.println("<form action=\"bj\">");
@@ -68,7 +63,6 @@ public class Html{
 			p.println("<input type =\"hidden\" name =\"a\" value=\"double\">");
 			p.println("<input type=\"submit\" value=\"double\">");
 			p.println("</form>");
-		}
 
 		p.println("</body>");
 		p.println("</html>");
