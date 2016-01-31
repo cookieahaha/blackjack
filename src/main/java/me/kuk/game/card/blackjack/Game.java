@@ -16,4 +16,7 @@ public class Game{
 		return blackjack;
 	}
 
+	public boolean getStarted(){
+		return this.isStarted;
+	}
 }

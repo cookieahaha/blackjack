@@ -12,13 +12,14 @@ public class Controller extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		if(model == null){
 			model = new Game();
+			System.err.println(model);
 		}
 		String action = req.getParameter("a");
+		System.err.println(action);
 		if(action ==null){
-			view = new Html(model, res);
 		}
-		if(action.equals("start the game")){
-			model.startGame();
+		else if(action.equals("start the game")){
+				model.startGame();
 		}
 	//	else if(action.equals("hit")){
 	//		model.hit();

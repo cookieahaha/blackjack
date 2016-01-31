@@ -310,7 +310,7 @@ public class Blackjack{
 		return this.player;
 	}
 
-	public Player getJealer(){
+	public Player getDealer(){
 		return this.dealer;
 	}
 }

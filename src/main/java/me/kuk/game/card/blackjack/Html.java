@@ -21,30 +21,31 @@ public class Html{
 
 		//body
 		p.println("<body>");
-		p.println("<p>test</p>");
+	//	p.println("<p>test</p>");
+
+		if(game.getStarted() == false){
 		//new game
 			p.println("<form action=\"bj\">");
 			p.println("<input type=\"hidden\" name=\"a\" value=\"start the game\">");
 			p.println("<input type=\"submit\" value=\"Start the game\">");
 			p.println("</form>");
-			p.println("<p>iojfrmcniunv</p>");			
+	//		p.println("<p>iojfrmcniunv</p>");			
+		}
+		else{
+
+			p.println(game.getBlackjack().getPlayer().getName());   //player name
+			p.println(game.getBlackjack().getPlayer().getScore());   //player score
+			p.println("");  //player card
+			p.println("vs");  //vs
+			p.println(game.getBlackjack().getDealer().getName());   //dealer name
+			p.println(game.getBlackjack().getPlayer().getScore());   //dealer score
+			p.println("");  //dealer card
 
 			//bet
 			p.println("<form action=\"bj\">");
 			p.println("<input type=\"hidden\" name=\"a\" value=\"bet\">");
 			p.println("<input type=\"submit\" value=\"bet\">");
 			p.println("</form>");
-
-			p.println("wins"); //win
-			p.println("losses"); //loss
-
-			p.println(model.getBlackjack().getPlayer().getName());   //player name
-			p.println(mode.getBlackjack().getPlayer().getScore());   //player score
-			p.println("");  //player card
-			p.println("vs");  //vs
-			p.println(mode.getBlackjack().getDealer().getName());   //dealer name
-			p.printnl(mode.getBlackjack().getPlayer().getScore());   //dealer score
-			p.println("");  //dealer card
 
 			//hit
 			p.println("<form action=\"bj\">");
@@ -63,7 +64,7 @@ public class Html{
 			p.println("<input type =\"hidden\" name =\"a\" value=\"double\">");
 			p.println("<input type=\"submit\" value=\"double\">");
 			p.println("</form>");
-
+		}
 		p.println("</body>");
 		p.println("</html>");
 		p.close();	
