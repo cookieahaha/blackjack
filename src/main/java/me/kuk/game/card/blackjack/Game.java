@@ -19,4 +19,16 @@ public class Game{
 	public boolean getStarted(){
 		return this.isStarted;
 	}
+
+	public void bet(){
+	}
+
+	public void hit(){
+	}
+
+	public void stand(){
+	}
+
+	public void next(){
+	}
 }

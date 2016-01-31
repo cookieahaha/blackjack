@@ -21,9 +21,18 @@ public class Controller extends HttpServlet{
 		else if(action.equals("start the game")){
 				model.startGame();
 		}
-	//	else if(action.equals("hit")){
-	//		model.hit();
-	//	}
+		else if(action.equals("bet")){
+			model.bet();
+		}
+		else if(action.equals("hit")){
+			model.hit();
+		}
+		else if(action.equals("stand")){
+			model.stand();
+		}
+		else if(action.equals("next")){
+			model.next();
+		}
 		view = new Html(model, res);	
 	}
 }
