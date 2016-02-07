@@ -18,7 +18,7 @@ public class Controller extends HttpServlet{
 		System.err.println(action);
 		if(action ==null){
 		}
-		else if(action.equals("start the game")){
+		else if((action.equals("start the game")) || (action.equals("next"))){
 				model.startGame();
 		}
 		else if(action.equals("bet")){
@@ -29,9 +29,6 @@ public class Controller extends HttpServlet{
 		}
 		else if(action.equals("stand")){
 			model.stand();
-		}
-		else if(action.equals("next")){
-			model.next();
 		}
 		view = new Html(model, res);	
 	}

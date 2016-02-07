@@ -7,10 +7,19 @@ public class Game{
 	private boolean isStarted = false;
 
 	public Game(){
-		this.blackjack = new Blackjack();
+		this.player = new GamePlayer("player");
+		this.dealer = new GamePlayer("dealer");
+		this.deck = new Deck();
+	}
+
+	public Game(String player, String dealer){
+		this.player.setName(player);
+		this.dealer.setName(dealer);
+		this.deck = new Deck();
 	}
 
 	public void startGame(){
+		this.blackjack = new Blackjack();
 		this.blackjack.startGame();
 		this.isStarted = true;
 	}
@@ -32,6 +41,4 @@ public class Game{
 	public void stand(){
 	}
 
-	public void next(){
-	}
 }

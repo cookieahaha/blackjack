@@ -13,6 +13,10 @@ public class GamePlayer{
 		return this.name;
 	}
 
+	public void setName(String name){
+		this.name = name;
+	}
+
 	public void setMoney(int i){
 		this.money += i;
 	}
