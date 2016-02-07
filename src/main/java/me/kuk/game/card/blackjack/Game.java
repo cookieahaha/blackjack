@@ -1,5 +1,8 @@
 public class Game{
 
+	private GamePlayer player;
+	private GamePlayer dealer;
+	private Deck deck = null;
 	private Blackjack blackjack = null;
 	private boolean isStarted = false;
 
