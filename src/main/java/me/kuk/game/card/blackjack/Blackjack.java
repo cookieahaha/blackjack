@@ -313,4 +313,11 @@ public class Blackjack{
 	public Player getDealer(){
 		return this.dealer;
 	}
+
+	public int[] getResult(){
+		int[] result = new int[1];
+		result[0] = 1;
+		result[1] = 0;
+		return result;
+	}
 }

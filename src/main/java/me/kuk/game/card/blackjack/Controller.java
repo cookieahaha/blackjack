@@ -22,7 +22,8 @@ public class Controller extends HttpServlet{
 				model.startGame();
 		}
 		else if(action.equals("bet")){
-			model.bet();
+			int bet = Integer.parseInt(req.getParameter("bet"));
+			model.bet(bet);
 		}
 		else if(action.equals("hit")){
 			model.hit();

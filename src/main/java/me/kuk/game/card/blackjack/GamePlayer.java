@@ -17,10 +17,6 @@ public class GamePlayer{
 		this.name = name;
 	}
 
-	public void setMoney(int i){
-		this.money += i;
-	}
-
 	public int getWin(){
 		return this.win;
 	}
@@ -29,4 +25,17 @@ public class GamePlayer{
 		return this.lose;
 	}
 
+	public void win(int i){
+		this.money += i;
+		this.win += 1;
+	}
+
+	public void lose(int i){
+		this.money -= i;
+		this.lose += 1;
+	}
+
+	public int getMoney(){
+		return this.money;
+	}
 }

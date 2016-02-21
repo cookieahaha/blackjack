@@ -32,7 +32,16 @@ public class Game{
 		return this.isStarted;
 	}
 
-	public void bet(){
+	public int bet(int i){
+		if(player.getMoney() < i){
+			return -1;
+		}
+		else if(i >=0){
+			return 0;
+		}
+		else{
+			return 1;
+		}	
 	}
 
 	public void hit(){
@@ -41,4 +50,15 @@ public class Game{
 	public void stand(){
 	}
 
+	public void endGame(){
+		//win
+		if (this.blackjack.getResult()[0] == 0){
+			player.win(this.blackjack.getResult()[1]);
+		}
+		else if (this.blackjack.getResult()[0] == 1){
+			player.lose(this.blackjack.getResult()[1]);
+		}
+		else{
+		}
+	}
 }
