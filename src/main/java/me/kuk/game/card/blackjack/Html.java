@@ -69,6 +69,7 @@ public class Html{
     List<Card> cards = player.getCards();
     for(Card card : cards){
       p.println(card.toString());
+      p.println("<img src=\"image/card/" + card.toImage() + "\">");
     }
     p.println(", score: " + player.getScore());
     p.println("<br>");
