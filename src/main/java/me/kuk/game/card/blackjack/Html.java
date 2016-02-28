@@ -1,6 +1,7 @@
 import java.io.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public class Html{
 
@@ -41,6 +42,11 @@ public class Html{
       p.println(game.getBlackjack().getPlayer().getScore());   //dealer score
       p.println("");  //dealer card
 
+      List<Card> playerCards = game.getBlackjack().getPlayer().getCards(); 
+      List<Card> dealerCards = game.getBlackjack().getDealer().getCards(); 
+      showCards(p, playerCards);
+      showCards(p, dealerCards);
+      
       //hit
       p.println("<form action=\"bj\">");
       p.println("<input type =\"hidden\" name=\"a\" value=\"hit\">");
@@ -56,5 +62,12 @@ public class Html{
     p.println("</body>");
     p.println("</html>");
     p.close();  
+  }
+
+  private void showCards(PrintWriter p, List<Card> cards) {
+    for(Card card : cards){
+      p.println(card.toString());
+    }
+    p.println("<br>");
   }
 }
