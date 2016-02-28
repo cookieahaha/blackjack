@@ -32,6 +32,17 @@ public class Html{
 	//		p.println("<p>iojfrmcniunv</p>");			
 		}
 		else{
+			// Bet Response
+			if(game.getBetCheck() == -1){
+				p.println("<p>you cannot bet less than 0.</p>");
+			}
+			else if(game.getBetCheck() == 0){
+				p.println("<p>you cannot bet more than your money.</p>");
+			}
+			else{
+			// get card from deck
+	
+			}
 
 			p.println(game.getBlackjack().getPlayer().getName());   //player name
 			p.println(game.getBlackjack().getPlayer().getScore());   //player score
@@ -43,7 +54,7 @@ public class Html{
 
 			//bet
 			p.println("<form action=\"bj\">");
-			p.println("<input type=\"hidden\" name=\"a\" value=\"bet\">");
+			p.println("<input type=\"text\" name=\"a\" value=\"bet\">");
 			p.println("<input type=\"submit\" value=\"bet\">");
 			p.println("</form>");
 

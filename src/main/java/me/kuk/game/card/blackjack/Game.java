@@ -5,6 +5,7 @@ public class Game{
 	private Deck deck = null;
 	private Blackjack blackjack = null;
 	private boolean isStarted = false;
+	private int betcheck = -2;
 
 	public Game(){
 		this.player = new GamePlayer("player");
@@ -32,16 +33,23 @@ public class Game{
 		return this.isStarted;
 	}
 
-	public int bet(int i){
+	public void bet(int i){
+		// not enough money
 		if(player.getMoney() < i){
-			return -1;
+			this.betcheck = -1;
 		}
-		else if(i >=0){
-			return 0;
+		// cannot bet less than 0
+		else if(i <=0){
+			this.betcheck = 0;
 		}
-		else{
-			return 1;
+		// can bet
+		else{	
+			this.betcheck = 1;
 		}	
+	}
+
+	public int getBetCheck(){
+		return this.betcheck;
 	}
 
 	public void hit(){
