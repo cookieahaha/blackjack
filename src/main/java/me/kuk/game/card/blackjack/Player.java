@@ -18,6 +18,27 @@ public class Player {
   }
 
   public int getScore() {
+    int score = 0;
+    for(Card card : cards){
+      if(card.getNumber() >= 10){
+        score += 10;
+        continue;
+      }
+      if(card.getNumber() == 1){
+        if(score + 11 > 21){
+          score += 1;
+          continue;
+        }
+        else{
+          score += 11;
+          continue;
+        }
+      }
+      else{
+        score += card.getNumber();
+        continue;
+      }
+    }
     return score;
   }
 

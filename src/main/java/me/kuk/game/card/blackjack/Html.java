@@ -41,11 +41,12 @@ public class Html{
       p.println(game.getBlackjack().getDealer().getName());   //dealer name
       p.println(game.getBlackjack().getPlayer().getScore());   //dealer score
       p.println("");  //dealer card
+      p.println("<br>");
 
-      List<Card> playerCards = game.getBlackjack().getPlayer().getCards(); 
-      List<Card> dealerCards = game.getBlackjack().getDealer().getCards(); 
-      showCards(p, playerCards);
-      showCards(p, dealerCards);
+      Player player = game.getBlackjack().getPlayer(); 
+      Player dealer = game.getBlackjack().getDealer(); 
+      showCards(p, player);
+      showCards(p, dealer);
       
       //hit
       p.println("<form action=\"bj\">");
@@ -64,10 +65,12 @@ public class Html{
     p.close();  
   }
 
-  private void showCards(PrintWriter p, List<Card> cards) {
+  private void showCards(PrintWriter p, Player player) {
+    List<Card> cards = player.getCards();
     for(Card card : cards){
       p.println(card.toString());
     }
+    p.println(", score: " + player.getScore());
     p.println("<br>");
   }
 }

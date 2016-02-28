@@ -26,4 +26,23 @@ public class Blackjack {
     dealer.addCard(deck.deal());
   }
 
+  public void hit(){
+    player.addCard(deck.deal());
+  }
+
+  public void stand(){
+    dealerTurn();
+  }
+
+  public void dealerTurn(){
+    while(true){
+      if(dealer.getScore() < 16){
+        dealer.addCard(deck.deal());
+      }
+      else{
+        break;
+      }
+    }
+  }
+  
 }

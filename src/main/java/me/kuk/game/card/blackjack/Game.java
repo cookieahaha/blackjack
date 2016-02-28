@@ -18,9 +18,11 @@ public class Game {
   }
 
   public void hit() {
+    blackjack.hit();
   }
 
   public void stand() {
+    blackjack.stand();
   }
 
   public Blackjack getBlackjack() {
